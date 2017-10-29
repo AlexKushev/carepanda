@@ -162,7 +162,7 @@ body {
 
 .wrapperBackground {
     background-repeat: no-repeat;
-    background-position: right bottom;
+    background-position: right top 40px;
 }
 
 .nav {
