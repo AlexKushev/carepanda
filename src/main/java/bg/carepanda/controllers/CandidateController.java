@@ -1,5 +1,7 @@
 package bg.carepanda.controllers;
 
+import java.io.UnsupportedEncodingException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,9 +15,9 @@ public class CandidateController {
 
 	@RequestMapping("/apply")
 	public String registerCandidate(@ModelAttribute("candidateForm") CandidateForm candidateForm,
-			BindingResult bindingResult) {
+			BindingResult bindingResult) throws UnsupportedEncodingException {
 		System.out.println(candidateForm);
-
+		 
 		return "index";
 	}
 
