@@ -1,4 +1,5 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
@@ -248,46 +249,48 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <form>
+                    <form:form action="apply" modelAttribute="candidateForm">
                         <div class="form-group">
                             <label for="applyFullName">Име и фамилия</label>
-                            <input type="text" class="form-control" name="applyFullName" id="applyFullName" placeholder="Име и фамилия">
+                            <form:input path="name" type="text" class="form-control" name="applyFullName" id="applyFullName" placeholder="Име и фамилия"/>
                         </div>
                         <div class="form-group">
                             <label for="applyAge">Възраст</label>
-                            <input type="number" class="form-control" name="applyAge" id="applyAge" placeholder="Въведете години">
+                            <input path="age" type="number" class="form-control" name="applyAge" id="applyAge" placeholder="Въведете години"/>
                         </div>
                         <div class="form-group">
                             <label for="applyPhone">Телефон</label>
-                            <input type="number" class="form-control" name="applyPhone" id="applyPhone" placeholder="(359) xxx xxx xxx">
+                            <form:input path="phoneNumber" type="number" class="form-control" name="applyPhone" id="applyPhone" placeholder="(359) xxx xxx xxx"/>
                         </div>
                         <div class="form-group">
                             <label for="applyEmail">Имейл</label>
-                            <input type="email" class="form-control" name="applyEmail" id="applyEmail" placeholder="@">
+                            <form:input path="email" type="email" class="form-control" name="applyEmail" id="applyEmail" placeholder="@"/>
                         </div>
                         <div class="form-group">
                             <label>Предишен опит:</label><br />
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Да
+                                    <form:radiobutton path="previousExperience" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="1"/> Да
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Не
+                                    <form:radiobutton path="previousExperience" class="form-check-input" name="inlineRadioOptions" id="inlineRadio2" value="0"/> Не
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="applyDescription">Представете се</label>
-                            <textarea class="form-control" id="applyDescription" rows="3" placeholder="Кратко описание..."></textarea>
+                            <form:input path="personalDescription" type="textarea" class="form-control" id="applyDescription" rows="3" placeholder="Кратко описание..."/>
                         </div>
                         <div class="form-group">
                             <label for="applyCV">Прикачи CV</label>
-                            <input type="file" class="form-control-file" id="applyCV">
+                            <form:input path="cv_name" type="file" class="form-control-file" id="applyCV"/>
                         </div>
-                    </form>
-                    <button type="button" class="btn btn-pink">Изпрати</button>
+                        
+                        
+                        <input type="submit" value="Изпрати" class="btn btn-pink" />
+                    </form:form>
                 </div>
             </div>
         </div>
