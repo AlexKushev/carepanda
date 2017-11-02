@@ -242,10 +242,8 @@
                     <div class="footer__column">
                         <h3>Полезни връзки</h3>
                         <ul>
-                            <li>
-                                <a href="" Линк към връзка></a>
-                            </li>
-                            <li><a href="">Друг линк</a></li>
+                            <li><a href="">-</a></li>
+                            <li><a href="">-</a></li>
                         </ul>
                     </div>
                 </div>

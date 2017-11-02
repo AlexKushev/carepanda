@@ -482,6 +482,11 @@ body {
     overflow: hidden;
 }
 
+/* Remove for Launch */
+.footer__top {
+    display: none;
+}
+
 .footer__side {
     width: 100%;
     padding-top: 40px;
@@ -537,9 +542,9 @@ body {
 
 .footer__copyright {
     width: 100%;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     padding: 26px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 @media screen and (min-width: 480px) {
