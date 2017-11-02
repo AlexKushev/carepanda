@@ -41,13 +41,19 @@ window.onload = function() {
 };
 
 $(document).ready(function() {
+    $('.scrollTop').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+    
     $('.mainNav').on('click', function(ev) {
         var targetElementId = ev.target.getAttribute('data-target');
 
         if (!targetElementId) return;
 
         var targetElement = document.getElementById(targetElementId);
-        console.log(targetElement.offsetTop);
 
         $('html, body').animate({ scrollTop: targetElement.offsetTop }, 'slow');
     });

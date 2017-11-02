@@ -60,10 +60,10 @@
                     <li><a href="#sectionAbout" data-target="sectionAbout">За Нас</a></li>
                 </ul>
 
-                <div class="nav-right clear">
+                <!-- <div class="nav-right clear">
                     <button class="button button--pink"><strong>Регистрация</strong></button>
                     <button class="button">Вход</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </nav>
@@ -216,32 +216,38 @@
     <footer class="footer">
         <div class="wrapper">
             <div class="footer__top clear">
-                <div class="footer__column">
-                    <h3>Основна информация</h3>
-                    <ul>
-                        <li><a href="">Често задавани въпроси</a></li>
-                        <li><a href="">Кои сме ние</a></li>
-                        <li><a href="">Контакти</a></li>
-                    </ul>
+                <div class="footer__side">
+                    <button class="button button--mid button--transparent scrollTop">Върни се горе</button>
                 </div>
 
-                <div class="footer__column">
-                    <h3>Правила и условия</h3>
-                    <ul>
-                        <li><a href="">Условия за ползване</a></li>
-                        <li><a href="">Използване на бискивит</a></li>
-                        <li><a href="">Сигурност</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__column">
-                    <h3>Полезни връзки</h3>
-                    <ul>
-                        <li>
-                            <a href="" Линк към връзка></a>
-                        </li>
-                        <li><a href="">Друг линк</a></li>
-                    </ul>
+                <div class="footer__menu">
+                    <div class="footer__column">
+                        <h3>Основна информация</h3>
+                        <ul>
+                            <li><a href="">Често задавани въпроси</a></li>
+                            <li><a href="">Кои сме ние</a></li>
+                            <li><a href="">Контакти</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__column">
+                        <h3>Правила и условия</h3>
+                        <ul>
+                            <li><a href="">Условия за ползване</a></li>
+                            <li><a href="">Използване на бискивит</a></li>
+                            <li><a href="">Сигурност</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__column">
+                        <h3>Полезни връзки</h3>
+                        <ul>
+                            <li>
+                                <a href="" Линк към връзка></a>
+                            </li>
+                            <li><a href="">Друг линк</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
