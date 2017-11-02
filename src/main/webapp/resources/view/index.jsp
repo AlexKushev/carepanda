@@ -55,9 +55,9 @@
             <div class="navHolder">
                 <ul class="mainNav clear">
                     <li class="active"><a href="#">Начало</a></li>
-                    <li><a data-target="sectionNanny">Детегледачки</a></li>
-                    <li><a data-target="sectionParents">Родители</a></li>
-                    <li><a data-target="sectionAbout">За Нас</a></li>
+                    <li><a href="#sectionNanny" data-target="sectionNanny">Детегледачки</a></li>
+                    <li><a href="#sectionParents" data-target="sectionParents">Родители</a></li>
+                    <li><a href="#sectionAbout" data-target="sectionAbout">За Нас</a></li>
                 </ul>
 
                 <!-- <div class="nav-right clear">
