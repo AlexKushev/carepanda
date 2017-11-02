@@ -27,9 +27,9 @@
     <script src="<c:url value="resources/lib/popper/popper.min.js" />"></script>
     <script src="<c:url value="resources/lib/bootstrap/js/bootstrap.min.js" />"></script>
     
-    <script type='text/javascript' src='/carepanda/dwr/engine.js'></script>
-  	<script type='text/javascript' src='/carepanda/dwr/interface/candidateAjaxManager.js'></script>
-  	<script type='text/javascript' src='/carepanda/dwr/util.js'></script>
+    <script type='text/javascript' src='/dwr/engine.js'></script>
+  	<script type='text/javascript' src='/dwr/interface/candidateAjaxManager.js'></script>
+  	<script type='text/javascript' src='/dwr/util.js'></script>
 
     <script src="<c:url value="resources/scripts/main.js" />"></script>
     
