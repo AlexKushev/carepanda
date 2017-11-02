@@ -26,8 +26,21 @@
     <script src="<c:url value="resources/lib/jquery/dist/jquery.min.js" />"></script>
     <script src="<c:url value="resources/lib/popper/popper.min.js" />"></script>
     <script src="<c:url value="resources/lib/bootstrap/js/bootstrap.min.js" />"></script>
+    
+    <script type='text/javascript' src='/carepanda/dwr/engine.js'></script>
+  	<script type='text/javascript' src='/carepanda/dwr/interface/candidateAjaxManager.js'></script>
+  	<script type='text/javascript' src='/carepanda/dwr/util.js'></script>
 
     <script src="<c:url value="resources/scripts/main.js" />"></script>
+    
+        <script>
+      function loadModalWindow() {
+         // open your window here
+         $('#jobApplicationModal').modal('show');
+         candidateAjaxManager.addNewCandidate();
+      }
+  </script>
+    
 </head>
 
 <body>
@@ -63,7 +76,7 @@
                     Имаш свободно време, което можеш да отделиш за малчуганите на заети родители?
                     <br /> Кандидатствай за работа при нас и стани част от младия и амбициозен екип на <strong>Care Panda</strong>!
                 </h2>
-                <button class="button button--big button--pink" data-toggle="modal" data-target="#jobApplicationModal">Кандидатствай</button>
+                <button class="button button--big button--pink" onclick="loadModalWindow();">Кандидатствай</button>
             </div>
         </div>
     </header>
