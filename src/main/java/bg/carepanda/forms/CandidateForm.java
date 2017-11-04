@@ -1,7 +1,5 @@
 package bg.carepanda.forms;
 
-import java.io.File;
-
 public class CandidateForm {
 
     private String name;
@@ -15,8 +13,6 @@ public class CandidateForm {
     private int previousExperience;
 
     private String personalDescription;
-
-    private File cv_name;
 
     public String getName() {
         return name;
@@ -66,19 +62,10 @@ public class CandidateForm {
         this.personalDescription = personalDescription;
     }
 
-    public File getCv_name() {
-        return cv_name;
-    }
-
-    public void setCv_name(File cv_name) {
-        this.cv_name = cv_name;
-    }
-
     @Override
     public String toString() {
         return "CandidateForm [name=" + name + ", age=" + age + ", phoneNumber=" + phoneNumber + ", email=" + email
-                + ", previousExperience=" + previousExperience + ", personalDescription=" + personalDescription
-                + ", cv_name=" + cv_name + "]";
+                + ", previousExperience=" + previousExperience + ", personalDescription=" + personalDescription + "]";
     }
 
 }

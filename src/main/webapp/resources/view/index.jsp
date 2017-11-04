@@ -40,10 +40,24 @@
   
       }
       
-      function onSave() {
-    	  var file = dwr.util.getValue('applyCV');
-    	  candidateAjaxManager.addNewCandidate(file, file.value);
+      function saveNewCandidate() {
+    	  var name = $("#applyFullName").val();
+    	  var age = $("#applyAge").val();
+    	  var phoneNumber = $("#applyPhone").val();
+    	  var email = $("#applyEmail").val();
+    	  var previousExperience = $('input[name=inlineRadioOptions]:checked', '#applyForm').val();
+    	  var personalDescription = $("#applyDescription").val();
+    	  var candidateForm = {
+    		name : name,
+    		age : age,
+    		phoneNumber : phoneNumber,
+    		email : email,
+    		previousExperience : previousExperience,
+    		personalDescription : personalDescription
+    	  };
+    	  candidateAjaxManager.addNewCandidate(candidateForm);
       }
+      
   </script>
     
 </head>
@@ -64,11 +78,6 @@
                     <li><a href="#sectionParents" data-target="sectionParents">Родители</a></li>
                     <li><a href="#sectionAbout" data-target="sectionAbout">За Нас</a></li>
                 </ul>
-
-                <!-- <div class="nav-right clear">
-                    <button class="button button--pink"><strong>Регистрация</strong></button>
-                    <button class="button">Вход</button>
-                </div> -->
             </div>
         </div>
     </nav>
@@ -273,48 +282,42 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <form:form action="apply" modelAttribute="candidateForm" enctype="multipart/form-data">
+                    <form enctype="multipart/form-data" id="applyForm">
                         <div class="form-group">
                             <label for="applyFullName">Име и фамилия</label>
-                            <form:input path="name" type="text" class="form-control" name="applyFullName" id="applyFullName" placeholder="Име и фамилия"/>
+                            <input type="text" class="form-control" name="applyFullName" id="applyFullName" placeholder="Име и фамилия"/>
                         </div>
                         <div class="form-group">
                             <label for="applyAge">Възраст</label>
-                            <input path="age" type="number" class="form-control" name="applyAge" id="applyAge" placeholder="Въведете години"/>
+                            <input type="number" class="form-control" name="applyAge" id="applyAge" placeholder="Въведете години"/>
                         </div>
                         <div class="form-group">
                             <label for="applyPhone">Телефон</label>
-                            <form:input path="phoneNumber" type="number" class="form-control" name="applyPhone" id="applyPhone" placeholder="(359) xxx xxx xxx"/>
+                            <input type="number" class="form-control" name="applyPhone" id="applyPhone" placeholder="(359) xxx xxx xxx"/>
                         </div>
                         <div class="form-group">
                             <label for="applyEmail">Имейл</label>
-                            <form:input path="email" type="email" class="form-control" name="applyEmail" id="applyEmail" placeholder="@"/>
+                            <input type="email" class="form-control" name="applyEmail" id="applyEmail" placeholder="@"/>
                         </div>
                         <div class="form-group">
                             <label>Предишен опит:</label><br />
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <form:radiobutton path="previousExperience" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="1"/> Да
+                                    <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="1" checked/> Да
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <form:radiobutton path="previousExperience" class="form-check-input" name="inlineRadioOptions" id="inlineRadio2" value="0"/> Не
+                                    <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio2" value="0"/> Не
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="applyDescription">Представете се</label>
-                            <form:input path="personalDescription" type="textarea" class="form-control" id="applyDescription" rows="3" placeholder="Кратко описание..."/>
+                             <textarea class="form-control" id="applyDescription" rows="3" placeholder="Кратко описание..."></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="applyCV">Прикачи CV</label>
-                            <form:input path="cv_name" type="file" class="form-control-file" id="applyCV"/>
-                        </div>
-                        
-                        
-                        <input type="button" onclick="onSave();" value="Изпрати" class="btn btn-pink" />
-                    </form:form>
+                        <input type="button" onclick="saveNewCandidate();" value="Изпрати" class="btn btn-pink" />
+                    </form>
                 </div>
             </div>
         </div>

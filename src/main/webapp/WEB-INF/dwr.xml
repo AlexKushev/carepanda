@@ -3,9 +3,12 @@
     "http://getahead.org/dwr/dwr30.dtd">
 
 <dwr>
+
   <allow>
     <create creator="new" javascript="candidateAjaxManager">
       <param name="class" value="bg.carepanda.ajax.CandidateAjaxManager"/>
     </create>
+     <convert converter="bean" match="bg.carepanda.forms.CandidateForm"/>
   </allow>
+  
 </dwr>
