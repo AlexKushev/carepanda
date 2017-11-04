@@ -13,12 +13,12 @@ import bg.carepanda.forms.CandidateForm;
 @Controller
 public class CandidateController {
 
-	@RequestMapping("/apply")
-	public void registerCandidate(@ModelAttribute("candidateForm") CandidateForm candidateForm,
-			BindingResult bindingResult) throws UnsupportedEncodingException {
-		System.out.println(candidateForm);
-		 
-		return;
-	}
+    @RequestMapping("/apply")
+    public void registerCandidate(@ModelAttribute("candidateForm") CandidateForm candidateForm,
+            BindingResult bindingResult) throws UnsupportedEncodingException {
+        System.out.println(candidateForm);
+
+        return;
+    }
 
 }

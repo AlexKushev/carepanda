@@ -11,17 +11,17 @@ import bg.carepanda.forms.CandidateForm;
 
 @Controller
 public class HomeController {
-	
-	@RequestMapping("/")
-	public String showHomePage(Model model) throws SQLException, URISyntaxException {
-		
-	    String dbUrl = System.getenv("CLEARDB_DATABASE_URL");
-	    System.out.println("Get db Url");
-	    System.out.println(dbUrl);
 
-	    model.addAttribute("candidateForm", new CandidateForm());
-		
-		return "index";
-	}
+    @RequestMapping("/")
+    public String showHomePage(Model model) throws SQLException, URISyntaxException {
+
+        String dbUrl = System.getenv("CLEARDB_DATABASE_URL");
+        System.out.println("Get db Url");
+        System.out.println(dbUrl);
+
+        model.addAttribute("candidateForm", new CandidateForm());
+
+        return "index";
+    }
 
 }

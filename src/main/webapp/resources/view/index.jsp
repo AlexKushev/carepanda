@@ -37,7 +37,12 @@
       function loadModalWindow() {
          // open your window here
          $('#jobApplicationModal').modal('show');
-         candidateAjaxManager.addNewCandidate();
+  
+      }
+      
+      function onSave() {
+    	  var file = dwr.util.getValue('applyCV');
+    	  candidateAjaxManager.addNewCandidate(file, file.value);
       }
   </script>
     
@@ -268,7 +273,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <form:form action="apply" modelAttribute="candidateForm">
+                    <form:form action="apply" modelAttribute="candidateForm" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="applyFullName">Име и фамилия</label>
                             <form:input path="name" type="text" class="form-control" name="applyFullName" id="applyFullName" placeholder="Име и фамилия"/>
@@ -308,7 +313,7 @@
                         </div>
                         
                         
-                        <input type="submit" value="Изпрати" class="btn btn-pink" />
+                        <input type="button" onclick="onSave();" value="Изпрати" class="btn btn-pink" />
                     </form:form>
                 </div>
             </div>
