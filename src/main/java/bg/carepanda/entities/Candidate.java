@@ -1,20 +1,37 @@
-package bg.carepanda.forms;
+package bg.carepanda.entities;
 
-import org.directwebremoting.annotations.DataTransferObject;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@DataTransferObject
-public class CandidateForm {
+@Entity
+@Table (name = "candidates")
+public class Candidate {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "candidate_id")
+    private int id;
+    
+    @Column(name= "name")
     private String name;
 
+    @Column(name = "age")
     private int age;
 
+    @Column(name = "phone_number")
     private int phoneNumber;
 
+    @Column(name = "email")
     private String email;
 
+    @Column(name = "has_experiance")
     private int previousExperience;
 
+    @Column(name = "description")
     private String personalDescription;
 
     public String getName() {
@@ -67,7 +84,7 @@ public class CandidateForm {
 
     @Override
     public String toString() {
-        return "CandidateForm [name=" + name + ", age=" + age + ", phoneNumber=" + phoneNumber + ", email=" + email
+        return "Candidate [name=" + name + ", age=" + age + ", phoneNumber=" + phoneNumber + ", email=" + email
                 + ", previousExperience=" + previousExperience + ", personalDescription=" + personalDescription + "]";
     }
 
