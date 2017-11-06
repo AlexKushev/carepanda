@@ -49,7 +49,7 @@
     </bean>
     
     	<bean class="java.net.URI" id="dbUrl">
-    	<constructor-arg value="#{systemEnvironment['CLEARDB_DATABASE_URL']}"/>
+    	<constructor-arg value="#{systemEnvironment['JAWSDB_URL']}"/>
 	</bean>
 
     <!-- Step 1: Define Database DataSource / connection pool -->
