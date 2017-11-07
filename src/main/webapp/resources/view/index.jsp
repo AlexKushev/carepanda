@@ -41,10 +41,36 @@
       }
       
       function saveNewCandidate() {
+    	  $('[id$="ErrorMessage"]').each (function () {
+    		  $(this).css("display", "none");
+    	  });
+    	  
     	  var name = $("#applyFullName").val();
+    	  
+    	  if (name.trim() == "") {
+    		  $("#applyFullNameErrorMessage").text("Моля въведете вашето име.");
+    		  $("#applyFullNameErrorMessage").css("display", "block");
+    		  return false;
+    	  }
+    	  
     	  var age = $("#applyAge").val();
     	  var phoneNumber = $("#applyPhone").val();
+    	  
+    	  if (phoneNumber.trim() == "") {
+    		  $("#applyPhoneErrorMessage").text("Моля въведете вашият телефонен номер.");
+    		  $("#applyPhoneErrorMessage").css("display", "block");
+    		  return false;
+    	  }
+    	  
     	  var email = $("#applyEmail").val();
+    	  
+    	  if (email.trim() == "") {
+    		  $("#applyEmailErrorMessage").text("Моля въведете вашият email адрес.");
+    		  $("#applyEmailErrorMessage").css("display", "block");
+    		  return false;
+    	  }
+    	  
+    	  var age = $("#applyAge").val();
     	  var previousExperience = $('input[name=inlineRadioOptions]:checked', '#applyForm').val();
     	  var personalDescription = $("#applyDescription").val();
     	  var candidateForm = {
@@ -55,7 +81,9 @@
     		previousExperience : previousExperience,
     		personalDescription : personalDescription
     	  };
-    	  candidateAjaxManager.addNewCandidate(candidateForm);
+    	  candidateAjaxManager.addNewCandidate(candidateForm, function() {
+    		  $('#jobApplicationModal').modal('hide');
+    	  });
       }
       
   </script>
@@ -286,18 +314,22 @@
                         <div class="form-group">
                             <label for="applyFullName">Име и фамилия</label>
                             <input type="text" class="form-control" name="applyFullName" id="applyFullName" placeholder="Име и фамилия"/>
+                        	<span id="applyFullNameErrorMessage"></span>
                         </div>
                         <div class="form-group">
                             <label for="applyAge">Възраст</label>
                             <input type="number" class="form-control" name="applyAge" id="applyAge" placeholder="Въведете години"/>
+                        	
                         </div>
                         <div class="form-group">
                             <label for="applyPhone">Телефон</label>
-                            <input type="number" class="form-control" name="applyPhone" id="applyPhone" placeholder="(359) xxx xxx xxx"/>
+                            <input type="text" class="form-control" name="applyPhone" id="applyPhone" placeholder="(359) xxx xxx xxx"/>
+                        	<span id="applyPhoneErrorMessage"></span>
                         </div>
                         <div class="form-group">
                             <label for="applyEmail">Имейл</label>
                             <input type="email" class="form-control" name="applyEmail" id="applyEmail" placeholder="@"/>
+                        	<span id="applyEmailErrorMessage"></span>
                         </div>
                         <div class="form-group">
                             <label>Предишен опит:</label><br />
